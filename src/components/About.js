@@ -14,23 +14,17 @@ const About = () => {
         </div>
 
         <p className="text-xl mt-20">
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eius,
-          deserunt illum mollitia officiis qui exercitationem perferendis neque
-          quasi a recusandae necessitatibus tempora iusto! Blanditiis error
-          iste, totam fugiat recusandae rerum laborum perferendis molestiae
-          aperiam asperiores nemo. Magni dolor maxime debitis vitae, eaque hic
-          ab mollitia voluptatibus, a nostrum eveniet laborum!
+          I am a graduate in Information Technology and Engineering. I have been
+          working in a web development company as a WordPress web developer for
+          2 year.To restart my career I started learning over the web, and I
+          completed a React through Udemy.
         </p>
 
         <br />
 
         <p className="text-xl">
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laborum
-          pariatur, vel similique sint, nobis aspernatur ut praesentium
-          explicabo ipsam aliquid quasi laboriosam et culpa possimus repudiandae
-          quisquam ullam maiores ab unde. Fugiat odio mollitia nemo alias.
-          Commodi facilis atque nulla vero voluptatem explicabo. Quibusdam,
-          magni quo! Eum cupiditate debitis labore.
+         Experience in websites and web applications. Extensive Experience in developing webpages using HTML/HTML5, javaScript,
+          React JS, Redux, React hooks. Experience in React JS Framework to build single page appliation. Expertise in using IDE tools such as Visual Studio Code, version control tool such as GIT
         </p>
       </div>
     </div>
