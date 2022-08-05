@@ -1,46 +1,54 @@
-import React, { useState ,useEffect} from "react";
+import React from "react";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { HiOutlineMail } from "react-icons/hi";
+import { BsFillPersonLinesFill } from "react-icons/bs";
 
 const Contact = () => {
-  const initialValues = { name: "", email: "", message: "" };
-  const [formValues, setFormValues] = useState(initialValues);
-  const [formErrors, setFormErrors] = useState({});
-  const [isSubmit, setIsSubmit] = useState(false);
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormValues({ ...formValues, [name]: value });
-  };
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setFormErrors(validate(formValues));
-    setIsSubmit(true);
-  };
-  useEffect(()=>{
-
-    if (Object.keys(formErrors).length === 0 && isSubmit) {
-        console.log(formValues);
-      }
-
-  },[formErrors])
-  const validate = (values) => {
-    const errors = {};
-    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
-    if (!values.name) {
-      errors.name = "Username is required!";
-    }
-    if (!values.email) {
-      errors.email = "Email is required!";
-    } else if (!regex.test(values.email)) {
-      errors.email = "This is not a valid email format!";
-    }
-    if (!values.message) {
-        errors.message = "Message is required";
-      } 
-      return errors;
-  };
+  const links = [
+    {
+      id: 1,
+      child: (
+        <>
+          LinkedIn <FaLinkedin size={30} />
+        </>
+      ),
+      href: "https://linkedin.com",
+      style: "rounded-tr-md",
+    },
+    {
+      id: 2,
+      child: (
+        <>
+          GitHub <FaGithub size={30} />
+        </>
+      ),
+      href: "https://github.com/anukm32",
+    },
+    {
+      id: 3,
+      child: (
+        <>
+          Mail <HiOutlineMail size={30} />
+        </>
+      ),
+      href: "anumolkmani@gmail.com",
+    },
+    {
+      id: 4,
+      child: (
+        <>
+          Resume <BsFillPersonLinesFill size={30} />
+        </>
+      ),
+      href: "/resume.pdf",
+      style: "rounded-br-md",
+      download: true,
+    },
+  ];
   return (
     <div
       name="contact"
-      className="w-full h-screen bg-gradient-to-b from-black to-gray-800 p-4 text-white"
+      className="w-full h-screen bg-gradient-to-b from-black to-gray-800 p-4 text-white "
     >
       <div className="flex flex-col p-4 justify-center max-w-screen-lg mx-auto h-full">
         <div className="pb-8">
@@ -50,40 +58,59 @@ const Contact = () => {
           <p className="py-6">Submit the form below to get in touch with me</p>
         </div>
 
-        <div className=" flex justify-center items-center">
+        <div className=" flex  justify-center items-center ">
           <form
-            onSubmit={handleSubmit}
             action="https://getform.io/f/eeff6940-fe60-4707-967e-4f7e0a9f1843"
             method="POST"
-            className=" flex flex-col w-full md:w-1/2"
+            className=" flex flex-col w-full md:w-1/2  hidden md:flex"
           >
             <input
               type="text"
               name="name"
-              value={formValues.name}
-              onChange={handleChange}
               placeholder="Enter your name"
               className="p-2 bg-transparent border-2 rounded-md text-white focus:outline-none"
-            /> <p>{formErrors.name}</p>
+            />
             <input
               type="text"
               name="email"
-              value={formValues.email}
               placeholder="Enter your email"
               className="my-4 p-2 bg-transparent border-2 rounded-md text-white focus:outline-none"
-            /><p>{formErrors.email}</p>
+            />
             <textarea
               name="message"
               placeholder="Enter your message"
-              value={formValues.message}
               rows="10"
               className="p-2 bg-transparent border-2 rounded-md text-white focus:outline-none"
-            ></textarea><p>{formErrors.message}</p>
+            ></textarea>
 
             <button className="text-white bg-gradient-to-b from-cyan-500 to-blue-500 px-6 py-3 my-8 mx-auto flex items-center rounded-md hover:scale-110 duration-300">
               Let's talk
             </button>
           </form>
+          <div className=" justify-center items-center md:hidden">
+        <ul>
+          {links.map(({ id, child, href, style, download }) => (
+            <li
+              key={id}
+              className={
+                "flex justify-between items-center w-40 h-14 px-4 ml-[-100px] hover:ml-[-10px] hover:rounded-md duration-300 bg-gray-500" +
+                " " +
+                style
+              }
+            >
+              <a
+                href={href}
+                className="flex justify-between items-center w-full text-white"
+                download={download}
+                target="_blank"
+                rel="noreferrer"
+              >
+                {child}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
         </div>
       </div>
     </div>

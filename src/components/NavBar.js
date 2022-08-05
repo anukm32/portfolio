@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { Link } from "react-scroll";
 
+
 const NavBar = () => {
   const [nav, setNav] = useState(false);
 
@@ -27,6 +28,7 @@ const NavBar = () => {
       link: "contact",
     },
   ];
+
 
   return (
     <div className="flex justify-between items-center w-full h-20 px-4 text-white bg-black fixed">
