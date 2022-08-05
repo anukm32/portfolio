@@ -40,7 +40,7 @@ const SocialLinks = () => {
             Resume <BsFillPersonLinesFill size={30} />
           </>
         ),
-        href: "/Anu CV - 05.08.2022.pdf",
+        href: "/Anu CV -frontend.pdf",
         style: "rounded-br-md",
         download: true,
       },
