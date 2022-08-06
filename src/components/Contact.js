@@ -40,7 +40,7 @@ const Contact = () => {
           Resume <BsFillPersonLinesFill size={30} />
         </>
       ),
-      href: "/resume.pdf",
+      href: "/Anu CV -frontend.pdf",
       style: "rounded-br-md",
       download: true,
     },
@@ -55,7 +55,7 @@ const Contact = () => {
           <p className="text-4xl font-bold inline border-b-4 border-gray-500">
             Cotact
           </p>
-          <p className="py-6">Submit the form below to get in touch with me</p>
+          <p className="py-6 hidden md:flex">Submit the form below to get in touch with me</p>
         </div>
 
         <div className=" flex  justify-center items-center ">
